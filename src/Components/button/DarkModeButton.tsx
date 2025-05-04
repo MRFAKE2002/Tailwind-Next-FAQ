@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 //! Libraries
 import React, { useEffect, useState } from "react";
@@ -6,7 +6,10 @@ import React, { useEffect, useState } from "react";
 function DarkModeButton() {
   //! State
 
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
 
   //! Custom Function
 
@@ -22,6 +25,7 @@ function DarkModeButton() {
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
   return (
