@@ -6,10 +6,7 @@ import React, { useEffect, useState } from "react";
 function DarkModeButton() {
   //! State
 
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const savedTheme = localStorage.getItem("darkMode");
-    return savedTheme ? JSON.parse(savedTheme) : false;
-  });
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   //! Custom Function
 
@@ -19,6 +16,15 @@ function DarkModeButton() {
 
   //! useEffect
 
+  // ✅ در مرحله mount از localStorage مقدار رو بگیر
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    if (savedTheme) {
+      setIsDarkMode(JSON.parse(savedTheme));
+    }
+  }, []);
+
+  // ذخیره تغییرات و اضافه/حذف کردن کلاس dark
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
