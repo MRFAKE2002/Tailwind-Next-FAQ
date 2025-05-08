@@ -1,7 +1,6 @@
 //! Components
-import FAQList from "@/components/FAQList";
 import Header from "@/components/Header";
-
+import FAQList from "@/components/FAQList";
 
 export default function Home() {
   return (
