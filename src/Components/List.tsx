@@ -10,7 +10,7 @@ import FAQItem from "@/components/FAQItem";
 //! FAQ Data
 import faqData from "@/data/faqData";
 
-function FAQList() {
+function List() {
   //! useState
   const [openId, setOpenId] = useState<number>(0);
   const [expandAll, setExpandAll] = useState<boolean>(false);
@@ -92,4 +92,4 @@ function FAQList() {
   );
 }
 
-export default FAQList;
+export default List;

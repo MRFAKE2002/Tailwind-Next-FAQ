@@ -1,5 +1,5 @@
 //! Components
-import FAQList from "@/components/FAQList";
+import List from "@/components/List";
 
 function Home() {
   return (
@@ -15,9 +15,9 @@ function Home() {
           </p>
         </header>
       </div>
-      <FAQList />
+      <List />
     </div>
   );
 }
 
-export default Home
+export default Home;
