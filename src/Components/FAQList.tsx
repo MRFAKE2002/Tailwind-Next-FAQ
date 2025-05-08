@@ -4,11 +4,11 @@
 import { useEffect, useState } from "react";
 
 //! Components
-import DarkModeButton from "./button/DarkModeButton";
-import FAQItem from "./FAQItem";
+import DarkModeButton from "@/components/button/DarkModeButton";
+import FAQItem from "@/components/FAQItem";
 
 //! FAQ Data
-import faqData from "../data/faqData";
+import faqData from "@/data/faqData";
 
 function FAQList() {
   //! useState
